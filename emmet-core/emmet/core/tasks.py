@@ -180,7 +180,7 @@ class InputDoc(BaseModel):
     is_hubbard: bool = Field(
         default=False, description="Is this a Hubbard +U calculation"
     )
-    hubbards: Optional[dict] = Field(None, description="The hubbard parameters used")
+    hubbards: Optional[Dict] = Field(None, description="The hubbard parameters used")
 
     @classmethod
     def from_vasp_calc_doc(cls, calc_doc: Calculation) -> "InputDoc":
@@ -222,7 +222,7 @@ class CustodianDoc(BaseModel):
         title="Custodian Corrections",
         description="List of custodian correction data for calculation.",
     )
-    job: Optional[dict] = Field(
+    job: Optional[Dict] = Field(
         None,
         title="Cusotodian Job Data",
         description="Job data logged by custodian.",
